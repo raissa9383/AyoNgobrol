@@ -16,8 +16,8 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
     service: "gmail", 
     auth: {
-        user: "putiraissa@infitech.or.id", 
-        pass: "vvvw yktl wdvx xbqc", 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
     },
 });
 
@@ -185,7 +185,7 @@ io.on("connection", (socket) => {
 });
 
 // Jalankan server
-const port = 5000;
+const port = process.env.PORT || 5000;
 server.listen(port, () => {
     console.log(`Server berjalan pada port: ${port}`);
 });
