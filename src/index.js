@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
 
 function sendEmailNotification(to, sender, message) {
     const mailOptions = {
-        from: "putiraissa@infitech.or.id", // Ganti dengan email Anda
+        from: "putiraissa@infitech.or.id", 
         to: to,
         subject: "Pesan Baru dari Chat Aplikasi",
         text: `Anda menerima pesan baru dari ${sender}: ${message}`,
@@ -60,7 +60,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // Rute untuk halaman login
-app.get("/", (req, res) => {
+app.get("/login", (req, res) => {
     res.render("login");
 });
 
