@@ -8,8 +8,14 @@
     ],
     "routes": [
       {
+        "src": "/",
+        "headers": { "Location": "/login" },
+        "status": 308
+      },
+      {
         "src": "/(.*)",
         "dest": "src/index.js"
       }
     ]
   }
+  
