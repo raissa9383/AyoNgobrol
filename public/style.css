@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#EEEEFF, #C8C7FF);
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+.wadah-formulir {
+    width: 300px;
+    background: #ffffff88;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .grup-formulir {
+    margin-bottom: 15px;
+  }
+
+  .grup-formulir label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .grup-formulir input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .tmbl-kirim {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #C8C7FF;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .tmbl-kirim:hover {
+    background-color: #8786de;
+  }
+
+  p {
+    margin-top: 15px;
+  }

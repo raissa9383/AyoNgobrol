@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Antar Pengguna</title>
+    <link rel="stylesheet" href="/chatbot.css">
+</head>
+<body>
+    <div class="wadah-chatbot">
+        <div class="chat-header">
+            <div class="header-info">
+                <div class="chatbot-logo"></div>
+                <span class="Text-logo">Chat Antar Pengguna</span>
+            </div>
+        </div>
+        <div class="badan-chat" id="messages"></div>
+        <div class="chat-footer">
+            <form id="chat-form" class="chat-form">
+                <textarea class="input-pesan" id="message-input" placeholder="Ketik pesan..."></textarea>
+                <button type="submit" style="background: none; border: none; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24" fill="#6b68c9">
+                        <path d="M120 896V256l720 320-720 320Zm60-115 481-205-481-205v410Zm0-410v410-410Z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Mendapatkan username dari backend
+        const username = "<%= username %>";
+        socket.emit("set-username", username);
+
+        // Referensi elemen
+        const form = document.getElementById("chat-form");
+        const input = document.getElementById("message-input");
+        const messages = document.getElementById("messages");
+
+        // Fungsi menambahkan pesan ke layar
+        function addMessage(sender, message) {
+            const div = document.createElement("div");
+            div.classList.add("pesan");
+            div.innerHTML = `
+                <div class="pesan-text">
+                    <strong>${sender}:</strong> ${message}
+                </div>
+            `;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight; // Scroll otomatis
+        }
+
+        // Mengirim pesan
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const message = input.value.trim();
+            if (message) {
+                socket.emit("send-message", message); // Kirim ke server
+                addMessage("Anda", message); // Tampilkan di layar sendiri
+                input.value = ""; // Kosongkan input
+            }
+        });
+
+        // Menerima pesan dari pengguna lain
+        socket.on("receive-message", (data) => {
+            const { sender, message } = data;
+            addMessage(sender, message);
+        });
+    </script>
+</body>
+</html>

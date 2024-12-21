@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#EEEEFF, #C8C7FF);
+}
+
+.wadah-chatbot {
+    position: relative;
+    width: 700px;
+    background: #ffffff88;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5)
+}
+
+.chat-header{
+    display: flex;
+    align-items: center;
+    background: #6b68c9;
+    padding: 15px 22px;
+    justify-content: space-between;
+}
+
+.chat-header .header-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-info .chatbot-logo {
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    fill: #6b68c9;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.header-info .Text-logo {
+    color: #fff;
+    font-size: 1.31rem;
+    font-weight: 600;
+}
+
+.badan-chat {
+    padding: 25px 22px;
+    display: flex;
+    gap: 20px;
+    height: 460px;
+    margin-bottom: 82px;
+    overflow-y: auto;
+    flex-direction: column;
+    scrollbar-width: thin;
+    scrollbar-color: #CCCCF5;
+}
+
+.badan-chat .pesan{
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.badan-chat .pesan-bot .bot-avatar {
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    fill: #fff;
+    align-self: flex-end;
+    flex-shrink: 0;
+    margin-bottom: 2px;
+    background: #6b68c9;
+    border-radius: 50%;
+}
+
+.badan-chat .pesan-user {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.badan-chat .pesan .pesan-text{
+    padding: 12px 16px;
+    max-width: 75%;
+    font-size: 1rem;
+    background: #e0e0f9;
+}
+
+.badan-chat .bot-pesan.berpikir .pesan-text{
+    padding: 2px 16px;
+}
+
+.badan-chat .pesan-bot .pesan-text{
+    background: #e0e0f9;
+    border-radius: 13px 13px 13px 3px;
+}
+
+.badan-chat .pesan-user .pesan-text{
+    color: #fff;
+    background: #6b68c9;
+    border-radius: 13px 13px 3px 13px;
+}
+
+.badan-chat .pesan-user .lampiran {
+    width: 50%;
+    margin-top: -7px;
+    border-radius: 13px 13px 3px 13px;
+}
+
+.badan-chat .pesan-bot .indikator-berpikir{
+    display: flex;
+    gap: 4px;
+    padding-block: 15px;
+}
+
+.badan-chat .pesan-bot .indikator-berpikir .dot {
+    height: 7px;
+    width: 7px;
+    opacity: 0.7;
+    border-radius: 50%;
+    background: #6b68c9;
+    animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+.badan-chat .pesan-bot .indikator-berpikir .dot:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.badan-chat .pesan-bot .indikator-berpikir .dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.badan-chat .pesan-bot .indikator-berpikir .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+    0%, 44% {
+        transform: translateY(0);
+    }
+
+    28% {
+        opacity: 0.4;
+        transform: translateY(-4px);
+    }
+
+    44% {
+        opacity: 0.2;
+    }
+}
+
+.chat-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px 22px;
+}
+
+.chat-footer .chat-form {
+    display: flex;
+    position: relative;
+    align-items: center;
+    background: fff;
+    border-radius: 32px;
+    outline: 1px solid #CCCCE5;
+}
+
+.chat-footer .chat-form:focus-within {
+    outline: 2px solid #5350C4;
+}
+
+.chat-form .input-pesan {
+    border: none;
+    outline: none;
+    height: 47px;
+    width: 100%;
+    resize: none;
+    font-size: 1rem;
+    padding: 14px 0 13px 18px;
+    border-radius: inherit;
+}
+
+.chat-form .kontrol-chat {
+    display: flex;
+    height: 47px;
+    gap: 3px;
+    align-items: center;
+    align-self: flex-end;
+    padding-right: 6px;
+}
+
+.chat-form .kontrol-chat button {
+    height: 35px;
+    width: 35px;
+    border: none;
+    font-size: 1.15rem;
+    cursor: pointer;
+    color: #706DB0;
+    background: none;
+    border-radius: 50%;
+    transition: 0.2 ease;
+}
+
+.chat-form .kontrol-chat #kirim-pesan {
+    color:#fff;
+    background: #5350C4;
+}
+
+.chat-form .kontrol-chat #kirim-pesan:hover {
+    background: #3d39ac;
+}
+
+.chat-form .kontrol-chat button:hover {
+    background: #f1f1ff;
+}
+
+.chat-form .bungkus-unggah-file {
+    height: 35px;
+    width: 35px;
+    position: relative;
+}
+
+.chat-form .bungkus-unggah-file :where(img, button){
+    position: absolute;
+}
+
+.chat-form .bungkus-unggah-file img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chat-form .bungkus-unggah-file #batal-file {
+    color: #ff0000;
+    background: #fff;
+
+}
+
+.chat-form .bungkus-unggah-file :where(img, #batal-file),
+.chat-form .bungkus-unggah-file.terunggah-file #unggah-file {
+    display: none;
+}
+
+.chat-form .bungkus-unggah-file.terunggah-file img,
+.chat-form .bungkus-unggah-file.terunggah-file:hover #batal-file {
+    display: block;
+}
+
+em-emoji-picker {
+    position: absolute;
+    left: 50%;
+    top: -337px;
+    width: 100%;
+    max-width: 350px;
+    max-height: 330px;
+    visibility: hidden;
+    transform: translateX(-50%);
+}
+
+body.emoji-tampil em-emoji-picker {
+    visibility: visible;
+}

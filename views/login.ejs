@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+
+        <link rel="stylesheet" href="/style.css">
+
+    </head>
+    <body>
+        <div class="wadah-formulir">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <div class="grup-formulir">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="NamaPengguna" placeholder="Masukan nama anda" required autocomplete="off">
+                </div>
+                <div class="grup-formulir">
+                    <label for="sandi">Kata Sandi</label>
+                    <input type="password" id="sandi" name="KataSandi" placeholder="Masukan kata sandi anda" required autocomplete="off">
+                </div>
+                <button type="submit" class="tmbl-kirim">Masuk</button>
+            </form>
+            <p>Tidak memiliki akun? <a href="/signup">Sign up</a> disini!</p>
+        </div>
+    </body>
+</html>
