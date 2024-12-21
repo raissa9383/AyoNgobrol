@@ -60,7 +60,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // Rute untuk halaman login
-app.get("/login", (req, res) => {
+app.get("/", (req, res) => {
     res.render("login");
 });
 
