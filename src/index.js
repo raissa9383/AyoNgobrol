@@ -55,6 +55,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Gunakan EJS sebagai view engine
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "../views"));
 
 // File static
 app.use(express.static("public"));
